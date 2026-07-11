@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-//charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Implementation Spec: Agentic Governance (O&G)</title>
+    <style>
+        :root {
+            --code-bg: #1e1e1e;
+            --code-text: #d4d4d4;
+            --primary: #003366;
+            --accent: #007acc;
+            --border: #ddd;
+            --bg: #fcfcfc;
+        }
+        body { font-family: 'Consolas', 'Monaco', monospace; line-height: 1.5; color: #333; background: var(--bg); margin: 0; padding: 0; }
+        header { background: var(--primary); color: white; padding: 2rem; text-align: center; border-bottom: 4px solid #d4af37; }
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
+        .module { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 2rem; margin-bottom: 3rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        h1, h2, h3 { color: var(--primary); }
+        .spec-block { background: #f9f9f9; border-left: 4px solid var(--accent); padding: 1rem; margin: 1rem 0; }
+        pre { background: var(--code-bg); color: var(--code-text); padding: 1rem; border-radius: 5px; overflow-x: auto; font-size: 0.9rem; }
+        .logic-flow { background: #fffbe6; border: 1px solid #ffe58f; padding: 1rem; border-radius: 5px; font-style: italic; }
+        .requirement { font-weight: bold; color: #d32f2f; }
+        .tag { background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; color: #666; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Technical Implementation Specification</h1>
+        <p>Engineering Guide: Agentic Governance Framework for Energy & O&G</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- MODULE 1: SYSTEM ARCHITECTURE -->
+        <div class="module">
+            <h2>1. System Architecture & Data Flow</h2>
+            <p>The system must implement a <strong>Middleware Proxy</strong> between the LLM and the Tool Execution Layer.</p>
+            
+            <div class="logic-flow">
+                <strong>Execution Flow:</strong><br>
+                LLM $\rightarrow$ Proposal $\rightarrow$ <strong>Governance Proxy (Logic Check)</strong> $\rightarrow$ (HITL/PVS if required) $\rightarrow$ Signed Request $\rightarrow$ Tool Execution $\rightarrow$ Response $\rightarrow$ Audit Log.
+            </div>
+
+            <h3>1.1 The Governance Proxy Logic</h3>
+            <div class="spec-block">
+                <p>The Proxy must execute the following check for every tool call:</p>
+                <pre>
+function evaluate_governance(action, context) {
+    const assetClass = get_asset_class(context.asset_id);
+    const isForbidden = check_forbidden_list(action, assetClass);
+    
+    if (isForbidden) return { status: "DENIED", reason: "Action prohibited for this asset class" };
+    
+    const confidence = context.model_confidence;
+    if (assetClass === "CRITICAL") return { status: "PENDING", requirement: "TIER_3_PVS" };
+    if (assetClass === "OPERATIONAL" && confidence < 0.90) return { status: "PENDING", requirement: "TIER_2_HITL" };
+    
+    return { status: "APPROVED", requirement: "NONE" };
+}
+                </pre>
+            </div>
+        </div>
+
+        <!-- MODULE 2: SECURITY & IDENTITY -->
+        <div class="module">
+            <h2>2. Security & Identity Implementation</h2>
+            
+            <h3>2.1 HSM-Signed Requests</h3>
+            <p>To prevent "Prompt Injection" from triggering unauthorized physical actions, the proxy must sign requests using a <strong>Hardware Security Module (HSM)</strong>.</p>
+            <div class="spec-//block">
+                <p class="requirement">Requirement:</p>
+                <ul>
+                    <li>Tool execution endpoints must reject any request lacking a valid HSM signature.</li>
+                    <li>The signature must include the <code>action_id</code>, <code>timestamp</code>, and <code>approver_id</code>.</li>
+                </ul>
+            </div>
+
+            <h3>2.2 Air-Gap Proxying</h3>
+            <p>Agents controlling ICS/SCADA must communicate via a <strong>Data Diode</strong> or a strictly controlled jump-host. No direct TCP/IP routing from the LLM environment to the industrial network.</p>
+        </div>
+
+        <!-- MODULE 3: THE PVS (PHYSICAL VERIFICATION) WORKFLOW -->
+        <div class="module">
+            <h2>3. PVS Implementation (Physical Verification)</h2>
+            <p>Implementation of the "Safety-Valve" Protocol for Critical Assets.</p>
+            
+            <div class="spec-block">
+                <h3>PVS State Machine:</h3>
+                <pre>
+STATE: PROPOSED $\rightarrow$ (Trigger PVS) $\rightarrow$ STATE: AWAITING_VERIFICATION $\rightarrow$ (Field Engineer Sign-off) $\rightarrow$ STATE: VERIFIED $\rightarrow$ (Execute Tool) $\rightarrow$ STATE: COMPLETED.
+                </pre>
+                <p><strong>API Endpoint:</strong> <code>POST /pvs/verify</code></p>
+                <p><strong>Payload:</strong> <code>{ "action_id": "uuid", "engineer_id": "uuid", "verification_token": "hash", "timestamp": "iso8601" }</code></p>
+            </div>
+        </div>
+
+        <!-- MODULE 4: AUDIT LOGGING & FORENSICS -->
+        <div class="module">
+            <h2>4. Audit Logging & Forensics</h2>
+            <p>Logs must be immutable and compatible with WORM (Write Once Read Many) storage.</p>
+            
+            <h3>4.1 JSON Audit Schema</h3>
+            <pre>
+{
+  "session_id": "uuid",
+  "timestamp": "iso8601",
+  "trace": [
+    {
+      "step": 1,
+      "thought": "Analyzing torque spikes...",
+      "action": "read_pressure_sensor",
+      "result": "450psi",
+      "confidence": 0.98,
+      "approval": { "tier": "1", "id": "system" }
+    },
+    {
+      "step": 2,
+      "thought": "Pressure exceeds threshold. Proposing valve closure.",
+      "action": "close_valve_V102",
+      "approval": { "tier": "3", "id": "eng_042", "pvs_id": "sig_882" }
+    }
+  ]
+}
+            </pre>
+        </div>
+
+        <!-- MODULE 5: VALIDATION GATES (CI/CD) -->
+        <div class="module">
+            <h2>5. Deployment Validation Gates (CI/CD)</h2>
+            <p>Integrate these gates into the Jenkins/GitLab pipeline.</p>
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th>Gate</th>
+                        <th>Technical Test</th>
+                        <th>Pass Criteria</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Risk Gate</strong></td>
+                        <td>Risk Assessment Form parsed.</td>
+                        <td>Agent Class mapped and Forbidden List defined.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Security Gate</strong></td>
+                        <td>Adversarial Red-Teaming.</td>
+                        <td>Zero successful bypasses of Forbidden Actions.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reliability Gate</strong></td>
+                        <td>Golden Dataset Run.</td>
+                        <td>Accuracy > 95% on "Black Swan" scenarios.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pilot Gate</strong></td>
+                        <td>Shadow Mode Comparison.</td>
+                        <td>Agreement with human operators > 90% over 30 days.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 HERMES Engineering Specs | Industrial AI Governance | Internal Use Only
+    </footer>
+</body>
+</html>

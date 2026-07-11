@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise AI Governance Frameworks - HERMES</title>
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --secondary-blue: #00509d;
+            --accent-gold: #d4af37;
+            --bg-light: #f4f7f9;
+            --text-dark: #333;
+            --border-color: #ddd;
+            --success-green: #28a745;
+            --warning-orange: #ffc107;
+            --danger-red: #dc3545;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-gold);
+        }
+
+        nav {
+            background: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-blue);
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .subtitle { font-size: 1.2rem; color: #666; margin-bottom: 2rem; }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .matrix-table th, .matrix-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        .matrix-table th {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .tag-tier1 { background: #e3f2fd; color: #0d47a1; border: 1px solid #0d47a1; }
+        .tag-tier2 { background: #fff3e0; color: #e65100; border: 1px solid #e65100; }
+        .tag-tier3 { background: #ffebee; color: #b71c1c; border: 1px solid #b71c1c; }
+
+        .highlight-box {
+            background: #eef2f7;
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .step-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .step-list li {
+            margin-bottom: 1rem;
+            padding-left: 2.5rem;
+            position: relative;
+        }
+
+        .step-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--success-green);
+            color: white;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 0.9rem;
+            line-height: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .framework-divider {
+            text-align: center;
+            margin: 4rem 0;
+            border-top: 2px dashed var(--border-color);
+            position: relative;
+        }
+
+        .framework-divider span {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-light);
+            padding: 0 1rem;
+            color: #888;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Enterprise AI Governance Frameworks</h1>
+        <div class="subtitle">Strategic Governance for Agentic Workflows & Industrial AI</div>
+    </header>
+
+    <nav>
+        <a href="#general">General Framework</a>
+        <a href="#og-energy">Energy & O&G Specialization</a>
+        <a href="#lifecycle">AI SDLC</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- FRAMEWORK 1: GENERAL GOVERNANCE -->
+        <div id="general" class="section">
+            <h2>Framework 1: General Agentic Governance</h2>
+            <p>A foundation for deploying AI Agents with structured autonomy and risk mitigation.</p>
+
+            <h3>The 3-Tier HITL Strategy</h3>
+            <p>This strategy balances "The Magic" (autonomy) with "The Safety" (human oversight).</p>
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th>Tier</th>
+                        <th>Governance Mode</th>
+                        <th> typical Action</th>
+                        <th>Oversight Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="tag tag-tier1">Tier 1</span></td>
+                        <td>Autonomous</td>
+                        <td>Low-risk reads / status updates</td>
+                        <td>None (Log Only)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-tier2">Tier 2</span></td>
+                        <td>Conditional</td>
+                        <td>Medium-risk writes / recommendations</td>
+                        <td>Confidence-based Approval</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-tier3">Tier 3</span></td>
+                        <td>Mandatory HITL</td>
+                        <td>High-risk/Critical Asset changes</td>
+                        <td>Mandatory Human Sign-off</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Core Governance Rules</h3>
+            <div class="highlight-box">
+                <strong>Security:</strong> Tool sandboxing, input sanitization, and HSM-signed credentials.<br>
+                <strong>Reliability:</strong> Recursion limits (max 10 turns), budget circuit breakers, and deterministic fallbacks.<br>
+                <strong>Compliance:</strong> Immutable audit trails (Thought $\rightarrow$ Action $\rightarrow$ Result) and provenance tracking.
+            </div>
+        </div>
+
+        <div class="framework-divider">
+            <span>Specialization Layer</span>
+        </div>
+
+        <!-- FRAMEWORK 2: ENERGY & O&G -->
+        <div id="og-energy" class="section">
+            <h2>Framework 2: Energy & O&G Industrial Specialization</h2>
+            <p>Zero-Trust governance designed for high-stakes Industrial Control Systems (ICS) and SCADA environments.</p>
+
+            <h3>Asset Criticality Matrix</h3>
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th>Agent Class</th>
+                        <th>Impact Level</th>
+                        <th> Example</th>
+                        <th>Governance Mode</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Informational</td>
+                        <td>Low</td>
+                        <td>Market Analysis / Policy Search</td>
+                        <td>Autonomous</td>
+                    </tr>
+                    <tr>
+                        <td>Operational Support</td>
+                        <td>Medium</td>
+                        <td>Maintenance Scheduling / Log Analysis</td>
+                        <td>Conditional</td>
+                    </tr>
+                    <tr>
+                        <td>Critical Assets</td>
+                        <td>High</td>
+                        <td>Valve Control / Pressure Settings / ESD</td>
+                        <td>Mandatory HITL + PVS</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>The "Safety-Valve" Protocol (PVS)</h3>
+            <div class="highlight-box" style="border-left: 5px solid var(--danger-red);">
+                <strong>Physical Verification Step (PVS):</strong> For any action impacting a Critical Asset, the system requires a verified physical check of the asset state by a field engineer before the agent's command is released.
+            </div>
+
+            <h3>Industrial Forbidden Actions</h3>
+            <ul class="step-list">
+                <li>No modification of pressure thresholds in active pipelines.</li>
+                <li>No overriding of Emergency Shutdown (ESD) systems.</li>
+                <li>No modifying valve states in hazardous zones without PVS.</li>
+            </ul>
+        </div>
+
+        <!-- AI SDLC -->
+        <div id="lifecycle" class="section">
+            <h2>The AI Governance SDLC</h2>
+            <p>Integrating governance into the development lifecycle to prevent "last-minute" security blocks.</p>
+            
+            <ul class="step-list">
+                <li><strong>Stage 1: Risk Mapping</strong> - Classify agent via Asset Criticality Matrix.</li>
+                <li><strong>Stage 2: Guardrail Design</strong> - Define Forbidden Actions and HITL Tiers.</li>
+                <li><strong>Stage 3: Prototype Validation</strong> - Synthetic testing against Golden Dataset.</li>
+                <li><strong>Stage 4: Adversarial Red-Teaming</strong> - Stress-testing for prompt injection/bypass.</li>
+                <li><strong>Stage 5: Shadow Mode</strong> - Parallel run with humans for 30 days.</li>
+                <li><strong>Stage 6: Pilot Deployment</strong> - Limited rollout with 100% HITL.</li>
+                <li><strong>Stage 7: Production</strong> - Scaling based on validated confidence levels.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 HERMES Enterprise Governance Frameworks | Confidential & Proprietary
+    </footer>
+
+</body>
+</html>
