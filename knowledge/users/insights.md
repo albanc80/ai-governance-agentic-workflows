@@ -1,6 +1,6 @@
 # User Insights
 
-> Synthesized themes from interviews + analytics. Working memory lives in `ingestion/`. Items get promoted here only when they meet the [memory promotion bar](../../CLAUDE.md#memory-promotion--working-vs-long-term): recurring, decision-relevant, observed across sources, useful beyond one session.
+> Synthesized themes from interviews + analytics. Working memory lives in `ingestion/`. Items get promoted here only when they meet the memory promotion bar (recurring, decision-relevant, observed across sources, useful beyond one session).
 
 ## Provenance vocabulary
 

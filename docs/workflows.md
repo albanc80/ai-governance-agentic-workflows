@@ -7,7 +7,7 @@
 1. **Receive task / signal.** Conversational input, slash command, or ingested artifact.
 2. **Retrieve before asking.** Search the repo, inspect linked files, look at the most relevant ingestion, infer from prior decisions. Ask only if the answer materially affects direction.
 3. **Identify the area.** Map to: strategy, product, users, market, org, stakeholders, hypotheses, decisions.
-4. **Load.** Within the context budget in `CLAUDE.md § Context budget`.
+4. **Load.** Within the context budget (see the operating manual for context limits).
 5. **Act.** Cite specific files when referencing knowledge.
 6. **Update.** Write back to affected files. Promote/demote hypotheses if evidence shifted. Log decisions. Update stakeholder last-touched.
 7. **Surface and close.** 2-4 bullets: resolved, open, needs judgment, revisit later. No dangling ambiguity.

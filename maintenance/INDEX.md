@@ -27,7 +27,7 @@ For each flagged item, propose: refresh, retire, or accept as still-current. PM 
 
 ### 4. Stakeholder cadence + strategy tensions
 - Stakeholders with `Influence: high` not touched in 3+ weeks → flag relationship debt.
-- Compare last 30 days of decisions and ingested signals against `knowledge/strategy.md`. Where do they diverge? Surface as tensions (subject to the threshold in `CLAUDE.md § Strategy tension threshold`), not as drift to fix. PM resolves deliberately.
+- Compare last 30 days of decisions and ingested signals against `knowledge/strategy.md`. Where do they diverge? Surface as tensions (subject to the strategy tension threshold), not as drift to fix. PM resolves deliberately.
 
 ### 5. Knowledge synthesis (compression)
 

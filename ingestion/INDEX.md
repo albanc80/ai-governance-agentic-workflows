@@ -2,7 +2,7 @@
 
 Every mode follows the same shape: **preserve source → load → process → route updates → surface what changed.**
 
-**Step 0 for every mode** — copy the raw artifact verbatim to `source/<kind>/YYYY-MM-DD-<slug>.md` *before* any extraction or synthesis. The `source/` file is the audit anchor and never gets edited again. The matching `ingestion/<kind>/<same-name>.md` (created during synthesis) must link back to it. See repo-root `CLAUDE.md § Source preservation`.
+**Step 0 for every mode** — copy the raw artifact verbatim to `source/<kind>/YYYY-MM-DD-<slug>.md` *before* any extraction or synthesis. The `source/` file is the audit anchor and never gets edited again. The matching `ingestion/<kind>/<same-name>.md` (created during synthesis) must link back to it.
 
 All modes feed back into strategy when relevant — opportunities, user needs, and market signals can inform `knowledge/strategy.md` just as much as strategy informs which signals matter. When an ingested signal conflicts with strategy, append to `strategy.md § Tensions`. Do not reject the signal automatically.
 
