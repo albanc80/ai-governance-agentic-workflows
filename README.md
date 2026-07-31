@@ -33,8 +33,6 @@ For the Energy & O&G specialization, an **Asset Criticality Matrix** maps agents
 ## Repository structure
 
 ```
-CLAUDE.md                        Operating manual for agentic tooling (internal)
-INDEX.md                         Master routing
 enterprise-framework/
   architecture.md                Asset Criticality Matrix, Safety-Valve (PVS) protocol
   deployment-playbook.md         4-Gate onboarding: Risk → Red-Team → Shadow → Pilot
