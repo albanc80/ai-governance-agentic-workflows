@@ -1,0 +1,31 @@
+# NOTICE
+
+## Reference Data Attribution
+
+This project's governance validation scenarios reference publicly available
+open datasets published by **Equinor ASA**:
+
+- **Volve Field Dataset** — open oil & gas field data from the North Sea
+  (production data, well logs, WITSML real-time drilling data, seismic,
+  reservoir models). Reference tables: `witsml_bha_runs`,
+  `witsml_drilling_messages`, `drilling_telemetry`, `well_logs_inventory`,
+  `production_data_daily`, `production_data_monthly`.
+- **Northern Lights CO₂ Storage Project (31/5-7 Eos well)** — open well data
+  for CO₂ storage research (drilling & completion, directional surveys, LWD,
+  wireline logs, formation pressure, well tests, core data).
+
+Neither the raw datasets nor any proprietary derivatives are included in this
+repository. Only catalog structure, schema descriptions, and governance test
+scenarios are referenced. Please consult Equinor's open-data license terms
+before redistributing the underlying datasets.
+
+## Trademarks
+
+All trademarks, service marks, and company names referenced herein (including
+Equinor, Volve, Northern Lights, Databricks, Halliburton) are the property of
+their respective owners and are used for identification purposes only.
+
+## Copyright
+
+&copy; 2026 The Author(s). This project is licensed under the
+Apache License, Version 2.0 — see `LICENSE`.
