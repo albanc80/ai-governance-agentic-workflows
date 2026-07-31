@@ -11,4 +11,4 @@ Prevent "Runaway Agents," infinite loops, and unsustainable token expenditure.
 5. **Loop Detection:** The system must monitor for repetitive tool calls (same input $\rightarrow$ same output $\rightarrow$ same tool call) and trigger a failure state if a loop is detected.
 
 ## Provenance
-- [stakeholder-verbal, Alberto, 2026-07-04]
+- [stakeholder-verbal, Owner, 2026-07-04]

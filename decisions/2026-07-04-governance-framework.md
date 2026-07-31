@@ -2,7 +2,7 @@
 
 ## Status: Decided
 **Date:** 2026-07-04
-**Owner:** Alberto
+**Owner:** Owner
 
 ## Context
 We needed a way to define AI governance for agentic workflows that balances the "magic" of autonomy with the strict requirements of the CISO and Cloud teams.

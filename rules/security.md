@@ -11,4 +11,4 @@ Prevent the agent from becoming a security liability or an attack vector.
 5. **Data Leakage Prevention:** Agents must not echo PII or sensitive system internals (e.g., stack traces, internal IP addresses) in their final responses to the user.
 
 ## Provenance
-- [stakeholder-verbal, Alberto, 2026-07-04]
+- [stakeholder-verbal, Owner, 2026-07-04]

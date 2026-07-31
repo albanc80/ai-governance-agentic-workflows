@@ -13,4 +13,4 @@ Ensure complete auditability and maintain a balanced "Human-in-the-Loop" (HITL) 
 4. **Human Override:** A human operator must be able to interrupt and take over an agentic thread at any point without losing the current state.
 
 ## Provenance
-- [stakeholder-verbal, Alberto, 2026-07-04]
+- [stakeholder-verbal, Owner, 2026-07-04]

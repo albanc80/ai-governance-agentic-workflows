@@ -15,4 +15,4 @@ Maintain absolute auditability for regulatory forensic analysis and human safety
 
 ## Provenance
 - [industry-standard, API RP 75]
-- [stakeholder-verbal, Alberto, 2026-07-04]
+- [stakeholder-verbal, Owner, 2026-07-04]

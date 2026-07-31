@@ -5,3 +5,7 @@ Temp/
 .DS_Store
 Thumbs.db
 .hermes/
+
+# Personal agent tooling (not for public distribution)
+CLAUDE.md
+.claude/

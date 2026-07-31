@@ -12,4 +12,4 @@ Ensure system stability and prevent catastrophic failure or unsustainable resour
 
 ## Provenance
 - [industry-standard, ISO 27001]
-- [stakeholder-verbal, Alberto, 2026-07-04]
+- [stakeholder-verbal, Owner, 2026-07-04]

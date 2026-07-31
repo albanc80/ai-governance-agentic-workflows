@@ -15,4 +15,4 @@ Ensure that AI agents cannot be used as attack vectors for Industrial Control Sy
 
 ## Provenance
 - [industry-standard, NIST AI RMF, API RP 75]
-- [stakeholder-verbal, Alberto, 2026-07-04]
+- [stakeholder-verbal, Owner, 2026-07-04]
