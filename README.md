@@ -55,10 +55,6 @@ ai-sdlc-governance/
 final_deliverables/
   framework_documentation.html   Stakeholder/executive presentation
   engineering_implementation_spec.html  Developer implementation guide
-decisions/                       Append-only decision log
-rules/                           Operating rules (security, reliability, compliance, data, discovery)
-knowledge/                       Strategy, roadmap, org, features
-docs/                            Overview, schemas, workflows
 ```
 
 ---

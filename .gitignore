@@ -9,3 +9,13 @@ Thumbs.db
 # Personal agent tooling (not for public distribution)
 CLAUDE.md
 .claude/
+# PM Brain working folders (kept local)
+knowledge/
+stakeholders/
+hypotheses/
+decisions/
+ingestion/
+maintenance/
+source/
+rules/
+docs/
